@@ -49,7 +49,7 @@ SpringMVC项目主要有以下几个部分组成：（1）基于注解配置Spri
 		3）根据request.getServletContext().getRealPath 获取到web目录下的image目录，用于存放上传后的文件。<br>
 	4）调用file.getImage().transferTo(newFile); 复制文件<br>
 	5）把生成的随机文件名提交给视图，用于后续的显示。<br>
-6，showUploadedFile.jsp 显示图片的页面：在WEB-INF/page 下新建文件showUploadedFile显示上传的图片。<br>
+	6，showUploadedFile.jsp 显示图片的页面：在WEB-INF/page 下新建文件showUploadedFile显示上传的图片。<br>
 
 ### （6）拦截器：
 1，interceptor包中有一个拦截器类HelloInterceptor，相关注释已经写在代码里了。<br>
