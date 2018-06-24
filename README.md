@@ -46,7 +46,7 @@ SpringMVC项目主要有以下几个部分组成：（1）基于注解配置Spri
 #### 5， UploadController 上传控制器：新建类UploadController 作为上传控制器，准备方法upload 映射上传路径/uploadImage。<br>
  	1）方法的第二个参数UploadedImageFile 中已经注入好了 image<br>
 	2）通过 RandomStringUtils.randomAlphanumeric(10);获取一个随机文件名。 因为用户可能上传相同文件名的文件，为了不覆盖原来的文件，通过随机文件名的办法来规避<br>
-		3）根据request.getServletContext().getRealPath 获取到web目录下的image目录，用于存放上传后的文件。<br>
+	3）根据request.getServletContext().getRealPath 获取到web目录下的image目录，用于存放上传后的文件。<br>
 	4）调用file.getImage().transferTo(newFile); 复制文件<br>
 	5）把生成的随机文件名提交给视图，用于后续的显示。<br>
 #### 6，showUploadedFile.jsp 显示图片的页面：在WEB-INF/page 下新建文件showUploadedFile显示上传的图片。<br>
