@@ -5,9 +5,11 @@ SpringMVC项目主要有以下几个部分组成：（1）基于注解配置Spri
 1, 在WEB-INF目录下的web.xml,配置了Spring MVC的入口DispatcherServlet，把所有的请求都提交到该Servlet.<br>
 2, 在WEB-INF目录下的springmvc-servlet.xml,与上一步中的<servlet-name>springmvc</servlet-name>对应,在springmvc-servlet.xml中添加<context:component-scan base-package="controller" />表示从包controller下扫描有@Controller注解的类。<br>
 3，在springmvc-servlet.xml中添加以下语句进行视图定位：<br>
+```
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"><br>
 	<property name="prefix" value="/WEB-INF/page/" /><br>
 	<property name="suffix" value=".jsp" /></bean><br>
+```
 4，在controller包中，对HelloController类加上@Controller注解，表示该类是一个控制器，在方法handleRequest前面加上@RequestMapping("/hello") 表示路径/hello会映射到该方法上。<br>
 5，在方法handleRequest中，将"Hello Spring MVC"字符串放入message传给hello.jsp并在页面中显示出来。<br>
 
@@ -27,10 +29,12 @@ SpringMVC项目主要有以下几个部分组成：（1）基于注解配置Spri
 
 ### （5）上传文件：
 1，配置web.xml允许访问*.jpg：在web.xml中新增加一段：<br>
+```
  	<servlet-mapping><br>
 	    <servlet-name>default</servlet-name><br>
 	    <url-pattern>*.jpg</url-pattern><br>
-  </servlet-mapping> <br>
+  	</servlet-mapping> <br>
+  ```
 表示允许访问*.jpg。并且必须加在springmvc的servlet之前。<br>
 2， 配置springmvc-servlet.xml：新增加一段配置，开放对上传功能的支持：<br>
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/><br>
